@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sportsBookApp').controller('AboutCtrl', function() {
+angular.module('sportsBookApp').controller('AboutCtrl', function(layoutService) {
 	var vm = this;
 
 	layoutService.getTreesData().then(function(response) {

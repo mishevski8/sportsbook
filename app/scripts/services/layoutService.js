@@ -2,7 +2,7 @@
 angular.module('sportsBookApp').factory('layoutService', function($http) {
 	var layoutFactory = {};
 
-	treeFactory.getTreesData = function() {
+	layoutFactory.getTreesData = function() {
 		return $http.get('data/layout.json');
 	}
 
