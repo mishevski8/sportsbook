@@ -11,9 +11,7 @@ angular.module('sportsBookApp').controller('MatchesCtrl', function(layoutService
 	vm.isLoading = true;
 
 	layoutService.getLayoutData().then(function(response) {
-		console.log(response.data.data);
 		vm.oddsLayout = response.data.data;
-		console.log('layout', vm.oddsLayout)
 		vm.oddsLayout = $filter('orderBy')(vm.oddsLayout, 'priority');
 		angular.forEach(vm.oddsLayout, function(item) {
 			angular.forEach(item.odds, function(type) {
@@ -28,7 +26,6 @@ angular.module('sportsBookApp').controller('MatchesCtrl', function(layoutService
 	matchesService.getMatchesData(leagueId).then(function(response) {
 		vm.progressbar.complete();
 		vm.isLoading = false;
-		console.log('matches data -> ', response.data.data);
 		vm.matches = response.data.data;
 
 
@@ -79,10 +76,7 @@ angular.module('sportsBookApp').controller('MatchesCtrl', function(layoutService
 	}).catch(function(error) {
 		vm.progressbar.reset();
 		vm.errorMessage = true;
-
 	});
-
-
 
 	vm.toFormat = function(date) {
 		return moment(date).format('MM-DD HH:mm');

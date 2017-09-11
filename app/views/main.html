@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-if="main.isLoading === false">
   <div class="panel panel-default" ng-repeat="item in main.items | orderBy:'-priority'">
     <div class="panel-heading">
       <div class="row">
