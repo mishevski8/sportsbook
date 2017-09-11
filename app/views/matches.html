@@ -1,0 +1,24 @@
+<div style="width:80%; margin:0 auto;">
+	<h4 ng-if="!matches.errorMessage && matches.isLoading === false">Results for {{matches.leagueName}}</h4>
+	<div class="alert alert-danger" style="width: 60%; margin:0 auto;" ng-if="matches.errorMessage">
+		<span class="glyphicon glyphicon-warning-sign"></span> There is no information for <strong>{{matches.leagueName}}</strong> league at the moment. <a href="#/" class="alert-link">Search</a> for another league
+	</div>
+	<table class="table table-striped table-bordered table-small center" ng-if="!matches.errorMessage && matches.isLoading === false">
+		<thead>
+			<tr>
+				<th class="borderRight">Date</th>
+				<th>Pairs</th>
+				<th ng-repeat="oddsType in matches.odds" class="textCenter">{{oddsType.name}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="match in matches.matches">
+				<td>{{matches.toFormat(match.sd)}}</td>
+				<td>{{match.h}} - {{match.a}}</td>
+				<td ng-repeat="matchCoef in match.coeficients" class="textCenter">
+					{{matchCoef.text}}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

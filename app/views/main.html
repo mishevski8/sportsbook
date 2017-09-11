@@ -1,31 +1,33 @@
-<div class="panel panel-default" ng-repeat="item in main.items | orderBy:'-priority'">
-  <div class="panel-heading">
-    <div class="row">
-      <h4 class="panel-title">
+<div class="container">
+  <div class="panel panel-default" ng-repeat="item in main.items | orderBy:'-priority'">
+    <div class="panel-heading">
+      <div class="row">
+        <h4 class="panel-title">
                         <a class="col-lg-6" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree{{item.id}}">{{item.name}}     
                         </a>
                         <span class="col-lg-6">{{item.total}}</span>
                     </h4>
+      </div>
     </div>
-  </div>
-  <div id="collapseThree{{item.id}}" class="panel-collapse collapse">
-    <div class="panel-body">
-      <div class="panel-group" id="accordion{{$index}}">
-        <div class="panel panel-default" ng-repeat="country in item.countries | orderBy : 'name'">
-          <div class="panel-heading">
-            <div class="row">
-              <h4 class="panel-title">
+    <div id="collapseThree{{item.id}}" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="panel-group" id="accordion{{$index}}">
+          <div class="panel panel-default" ng-repeat="country in item.countries | orderBy : 'name'">
+            <div class="panel-heading">
+              <div class="row">
+                <h4 class="panel-title">
                                         <a class="col-md-6" data-toggle="collapse" data-parent="#accordion{{country.id}}" href="#collapseThreeOne{{country.id}}">{{country.name}}</a> 
                                         <span class="col-md-6">{{country.total}}</span>
                                         
                                     </h4>
+              </div>
             </div>
-          </div>
-          <div id="collapseThreeOne{{country.id}}" class="panel-collapse collapse">
-            <div class="panel-body" ng-repeat="league in country.leagues | orderBy : 'name'">
-              <div class="row">
-                <div class="col-md-6">{{league.name}}</div>
-                <span class="col-md-6">{{league.total}}</span>
+            <div id="collapseThreeOne{{country.id}}" class="panel-collapse collapse">
+              <div class="panel-body" ng-repeat="league in country.leagues | orderBy : 'name'">
+                <div class="row">
+                  <a ui-sref="matches({leagueId: league.id, leagueName: league.name})" class="col-md-6">{{league.name}}</a>
+                  <span class="col-md-6">{{league.total}}</span>
+                </div>
               </div>
             </div>
           </div>

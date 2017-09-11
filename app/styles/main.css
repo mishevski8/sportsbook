@@ -11,6 +11,15 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 
 .header,
@@ -31,6 +40,15 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
 /* Make the masthead heading the same height as the navigation */
 
 .header h3 {
@@ -39,6 +57,15 @@ body {
   line-height: 40px;
   padding-bottom: 19px;
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -56,6 +83,15 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
 /* Main marketing message and sign up button */
 
 .jumbotron {
@@ -70,6 +106,15 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
 /* Supporting marketing content */
 
 .marketing {
@@ -79,6 +124,15 @@ body {
 .marketing p+h4 {
   margin-top: 28px;
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -119,4 +173,12 @@ body {
 
 .paddingLeft {
   padding-left: 150px !important;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.borderRight {
+  border-right-color: #fff;
 }

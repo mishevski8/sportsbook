@@ -8,7 +8,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'angularMoment',
+    'ngProgress'
   ])
   .config(function($routeProvider, $locationProvider, $stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
@@ -19,12 +21,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .state('about', {
-        url: "/about",
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .state('matches', {
+        url: "/matches/:leagueId/:leagueName",
+        templateUrl: 'views/matches.html',
+        controller: 'MatchesCtrl',
+        controllerAs: 'matches',
       });
     $locationProvider.hashPrefix('');
-
   });

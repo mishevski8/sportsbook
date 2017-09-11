@@ -2,9 +2,9 @@
 angular.module('sportsBookApp').factory('layoutService', function($http) {
 	var layoutFactory = {};
 
-	layoutFactory.getTreesData = function() {
+	layoutFactory.getLayoutData = function() {
 		return $http.get('data/layout.json');
 	}
 
-	return treeFactory;
+	return layoutFactory;
 });
